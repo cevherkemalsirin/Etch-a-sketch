@@ -1,7 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .main{
     border: 2px red solid;
-    max-width: 50vh;
-    min-height: 50vh;
+    width: 640px;
+    height: 640px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.tray{
+    display: flex;
+    flex: auto;
+}
+
+.cube{
+    background-color: yellow;
+    border: 1px black solid;
+    flex: 1;
+    aspect-ratio: 1;
 }
