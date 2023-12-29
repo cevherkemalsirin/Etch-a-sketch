@@ -1,0 +1,7 @@
+.main{
+    border: 2px red solid;
+    max-width: 50vh;
+    min-height: 50vh;
+    margin-left: auto;
+    margin-right: auto;
+}
