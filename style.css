@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    background-color: grey;
 }
 
 .main{
@@ -16,9 +17,9 @@
     flex: auto;
 }
 
-.cube{
-    background-color: yellow;
-    border: 1px black solid;
+.square{
+    background-color: rgb(241, 241, 241);
+   
     flex: 1;
     aspect-ratio: 1;
 }
