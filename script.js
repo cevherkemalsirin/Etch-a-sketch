@@ -1,28 +1,37 @@
 "use strict";
 
-let grid = 64;
+
 let customBackgroundColor = "rgb(255,255,255)";
 let canPaint = false;
-
+const gridValues = [2,4,16,32,64,128];
 
 const canvas = document.querySelector(".canvas");
 const colorPicker = document.querySelector(".colorPicker");
 const clearBtn = document.querySelector(".clearBtn");
 const rainbowBtn = document.querySelector(".rainbowBtn");
+const pixelSlider = document.querySelector(".pixelSlider");
+const pixelSliderTxt = document.querySelector(".sliderText")
 let pixels = null;
-
-
-
-
-//enum 
+let grid = gridValues[pixelSlider.value - 1];
+pixelSliderTxt.textContent = `${grid} x ${grid}`;
+// brush enum 
 const brushType = {
     rainbow : "rainbow",
     solid : "solid",
     darken: "darken"
 }
 let currentBrush = brushType.solid;
+
+pixelSlider.onchange = function ()
+{
+    grid = gridValues[pixelSlider.value - 1];
+    pixelSliderTxt.textContent = `${grid} x ${grid}`;
+    CreateCanvas();
+};
+
 function CreateCanvas()
 {
+    canvas.innerHTML = ""; //reset canvas
     for(let r = 0; r<grid; r++)
     {
         const row = document.createElement("div");
@@ -39,6 +48,8 @@ function CreateCanvas()
     }
     pixels = document.querySelectorAll(".square");
 }
+
+
 
 
 function Paint(e,color)
@@ -77,6 +88,10 @@ rainbowBtn.addEventListener("click", ()=>
     currentBrush = brushType.rainbow;
 });
 
+pixelSlider.addEventListener("click", ()=>{
+    
+});
+
 document.addEventListener("mousedown", (e)=>
 {
     canPaint = true;
@@ -94,9 +109,7 @@ document.addEventListener("mouseup", (e)=>
 canvas.addEventListener("mouseover", (e)=> {
     if(e.target.classList.contains("square") && canPaint)
     {
-        let a = DetermineColor();
-        console.log(a);
-        Paint(e.target,a);
+        Paint(e.target, DetermineColor());
     }
 });
 
