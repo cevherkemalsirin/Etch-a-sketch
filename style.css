@@ -6,20 +6,30 @@
 
 
 .main{
+     margin-top: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 100px;
 }
 
+h1{
+    text-align: center;
+    padding-top: 30px;
+}
 .canvas{
-    margin-top: 200px;
     border: 20px rgba(17, 4, 46, 0.329) solid;
     min-width: 640px;
     min-height: 640px;
-    border-radius: 40px;
+    border-radius: 10px;
 }
 
+button{
+    height: 25px;
+    width: 100px;
+    border-radius: 5px;
+    font-weight: bold;
+}
 
 .tray{
     display: flex;
@@ -35,11 +45,16 @@
 .colorPicker{
     height: 40px;
     width: 80px;
-    border: 2px black solid;
+    border: 0px;
+    background-color: rgba(255, 0, 0, 0);
 }
 
 .leftPanel{
     display: flex;
+    align-items: center;
     flex-direction: column;
-    gap:50px;
+    border-radius: 10px;
+    gap:40px;
+    padding: 20px;
+    background-color: rgba(2, 4, 4, 0.404);
 }
